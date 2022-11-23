@@ -10,6 +10,11 @@ public class DemoStream {
                 .filter(e -> e.charAt(0) == 'J')
                 .map(e -> "Bonjour " + e);
 
+        String jean = Arrays.stream(names)
+                .filter(e -> e.equals("Jean"))
+                .findAny()
+                .orElse(null);
+
         List<String> myListOfMessage = myStream.toList();
 
         myListOfMessage = myListOfMessage.stream()
